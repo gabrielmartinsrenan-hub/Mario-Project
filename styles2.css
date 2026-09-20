@@ -128,6 +128,11 @@ button {
   font-size: 24px;
 }
 
+.menu a.selecionado {
+  font-size: 30px;
+  transition: font-size 0.3s ease-in-out;
+}
+
 .header a:hover {
   color: #c51111;
 }
@@ -215,46 +220,46 @@ button {
   }
 
   /* Header */
- /* Header */
-.header {
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: 12px;
-  padding: 10px 12px;
-  text-align: left;
-}
+  .header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 12px;
+    padding: 10px 12px;
+    text-align: left;
+  }
 
-.header img {
-  width: 40px;
-  flex-shrink: 0;
-}
+  .header img {
+    width: 40px;
+    flex-shrink: 0;
+  }
 
-.menu {
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  gap: 14px;
-  width: auto;
-}
+  .menu {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 14px;
+    width: auto;
+  }
 
-.menu a {
-  font-size: 12px;
-  margin-left: 0;
-  line-height: 1.2;
-  white-space: nowrap;
-}
+  .menu a {
+    font-size: 12px;
+    margin-left: 0;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
 
   /* Conteúdo principal - direto sobre o vídeo, sem card */
   .container {
-  flex-direction: column;
-  gap: 15px;
-  width: 100%;
-  padding: 0 15px;
-  margin-top: 90px; /* header ficou mais baixo, precisa de menos espaço */
-  margin-bottom: 30px;
-  text-align: center;
-}
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    padding: 0 15px;
+    margin-top: 90px; /* header ficou mais baixo, precisa de menos espaço */
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
   .caixa1 {
     width: 100%;
   }
