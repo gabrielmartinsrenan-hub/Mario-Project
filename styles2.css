@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'mukta', sans-serif;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+}
+
+.video-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.video-bg video {
+  width: 100%;
+  height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 50px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 40px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.caixa1 {
+  width: 60%;
+}
+
+.logo-mario {
+  width: 350px;
+}
+
+.text {
+  color: rgb(233, 233, 241);
+  font-size: 20px;
+}
+
+button {
+  color: rgb(233, 233, 241);
+  background-color: #c51111;
+  width: 200px;
+  height: 50px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+.mario {
+  width: 220px;
+  height: auto;
+}
+
+.mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+  pointer-events: none;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 15px 40px;
+  color: aliceblue;
+  z-index: 1;
+}
+
+.header img {
+  width: 70px;
+  display: block;
+}
+
+.header a {
+  color: aliceblue;
+  text-decoration: none;
+  margin-left: 30px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.5s ease-in-out;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.menu a {
+  color: aliceblue;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 24px;
+}
+
+.header a:hover {
+  color: #c51111;
+}
+
+.link-whats {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  z-index: 100;
+  display: block;
+  cursor: pointer;
+}
+
+.link-whats img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.formulario {
+  background-color: aliceblue;
+  position: fixed;
+  top: 30%;
+  left: 0;
+  transform: translateX(calc(-100% + 6px)); /* borda bem fina, quase imperceptível */
+  z-index: 30;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 0 8px 8px 0;
+  width: 270px;
+  transition: transform 0.5s ease-in-out;
+  cursor: pointer;
+}
+
+.formulario.ativo {
+  transform: translateX(0);
+  cursor: default;
+}
+
+.formulario input {
+  height: 40px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: solid 1px;
+  color: gray;
+  outline-color: green;
+}
+
+.formulario textarea {
+  height: 100px;
+  padding-left: 5px;
+  border-radius: 5px;
+  border: solid 1px;
+  color: gray;
+  outline-color: green;
+}
+
+.mask-formulario {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(109deg, rgba(10, 12, 16, 0.99) 15%, rgba(10, 12, 16, 0.7) 50%, rgba(10, 12, 16, 0.99) 85%);
+  z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
+}
+
+.mask-formulario.ativo {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =====================================================
+   RESPONSIVO — CELULAR (flexbox, se adapta a qualquer tela)
+   ===================================================== */
+@media (max-width: 480px) {
+  body {
+    padding: 20px 15px;
+  }
+
+  /* Header */
+ /* Header */
+.header {
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+.header img {
+  width: 40px;
+  flex-shrink: 0;
+}
+
+.menu {
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  gap: 14px;
+  width: auto;
+}
+
+.menu a {
+  font-size: 12px;
+  margin-left: 0;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+  /* Conteúdo principal - direto sobre o vídeo, sem card */
+  .container {
+  flex-direction: column;
+  gap: 15px;
+  width: 100%;
+  padding: 0 15px;
+  margin-top: 90px; /* header ficou mais baixo, precisa de menos espaço */
+  margin-bottom: 30px;
+  text-align: center;
+}
+  .caixa1 {
+    width: 100%;
+  }
+
+  .logo-mario {
+    display: none;
+  }
+
+  .text {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  button {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .mario {
+    width: 160px;
+  }
+
+  /* Formulário */
+  .formulario {
+    width: 85%;
+    max-width: 300px;
+    top: 20%;
+  }
+
+  /* WhatsApp */
+  .link-whats img {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* =====================================================
+   CELULARES MUITO PEQUENOS
+   ===================================================== */
+@media (max-width: 340px) {
+  .header img {
+    width: 38px;
+  }
+
+  .menu a {
+    font-size: 12px;
+  }
+
+  .text {
+    font-size: 14px;
+  }
+
+  .mario {
+    width: 130px;
+  }
+}
